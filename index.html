@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f6e62">
+<title>高中教学 · 学习入口</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#fff; --text:#171b20; --muted:#5d6b7a;
+    --accent:#0f6e62; --accent-soft:#dff3ef; --border:#e2e7ec; --shadow:0 1px 2px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#111417; --card:#1a1e23; --text:#e9eef4; --muted:#9aa7b5;
+      --accent:#5ed0be; --accent-soft:#16302c; --border:#2a3037;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3); }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    padding:env(safe-area-inset-top) 16px calc(24px + env(safe-area-inset-bottom));}
+  .wrap{max-width:760px;margin:0 auto}
+  header{padding:32px 4px 20px}
+  .kicker{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;
+    color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px}
+  h1{margin:12px 0 6px;font-size:28px;line-height:1.25;letter-spacing:-.02em}
+  header p{margin:0;color:var(--muted);font-size:15px}
+  h2{margin:28px 4px 12px;font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.04em}
+  .grid{display:grid;gap:12px}
+  @media (min-width:640px){ .grid{grid-template-columns:1fr 1fr} }
+  a.card{display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:inherit;
+    background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;
+    box-shadow:var(--shadow);transition:transform .15s ease,border-color .15s ease}
+  a.card:active{transform:scale(.985)}
+  a.card:hover{border-color:var(--accent)}
+  .ico{flex:none;width:42px;height:42px;border-radius:12px;background:var(--accent-soft);
+    display:grid;place-items:center;font-size:20px}
+  .body{min-width:0}
+  .title{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-weight:650;font-size:16.5px}
+  .tag{font-size:11px;font-weight:600;padding:2px 7px;border-radius:6px;
+    color:var(--accent);background:var(--accent-soft);white-space:nowrap}
+  .tag.local{color:#9a5b00;background:#fff0d6}
+  @media (prefers-color-scheme: dark){ .tag.local{color:#f3c27a;background:#3a2a12} }
+  .desc{margin-top:4px;color:var(--muted);font-size:14px;line-height:1.5}
+  .hint{margin:20px 4px 0;padding:14px 16px;border:1px dashed var(--border);border-radius:14px;
+    color:var(--muted);font-size:13.5px;line-height:1.6}
+  .hint strong{color:var(--text)}
+  footer{margin-top:28px;padding:16px 4px;border-top:1px solid var(--border);
+    color:var(--muted);font-size:12.5px;line-height:1.7}
+  footer a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="kicker">📚 高中教学</span>
+    <h1>学习入口</h1>
+    <p>知识图谱 · 物理仿真 · 题库 · 记忆卡片，一处打开。</p>
+  </header>
+
+  <h2>每天用</h2>
+  <div class="grid">
+    <a class="card" href="./taxonomy/">
+      <div class="ico">🧭</div>
+      <div class="body">
+        <div class="title">知识图谱 · 查漏补缺 <span class="tag">本仓库镜像</span></div>
+        <div class="desc">数学/英语/物理等十科，小学到高中；做错题沿先修关系回溯，找到真正薄弱的那一环。</div>
+      </div>
+    </a>
+    <a class="card" href="https://bewho.github.io/China-K12-knowledge-taxonomy/" target="_blank" rel="noopener">
+      <div class="ico">🗺️</div>
+      <div class="body">
+        <div class="title">K12 知识图谱全景 <span class="tag">官方站</span></div>
+        <div class="desc">6657 个知识点、10 个学科的先修依赖图，看整门课是怎么搭起来的。</div>
+      </div>
+    </a>
+    <a class="card" href="https://lisa94destiny.github.io/physics-simulation/" target="_blank" rel="noopener">
+      <div class="ico">🔬</div>
+      <div class="body">
+        <div class="title">高中物理交互仿真 <span class="tag">官方站</span></div>
+        <div class="desc">调参数、看动画，把受力分析、电磁场这些抽象过程变成看得见的东西。</div>
+      </div>
+    </a>
+    <a class="card" href="http://192.168.31.42:18084/" target="_blank" rel="noopener">
+      <div class="ico">🧮</div>
+      <div class="body">
+        <div class="title">数学题库 MathBank <span class="tag local">仅家庭 WiFi</span></div>
+        <div class="desc">组卷、A4 排版、导出 PDF；连家里同一个 WiFi 才能打开，公网访问不到。</div>
+      </div>
+    </a>
+  </div>
+
+  <h2>备查与拓展</h2>
+  <div class="grid">
+    <a class="card" href="https://math.pansgo.com/" target="_blank" rel="noopener">
+      <div class="ico">🌐</div>
+      <div class="body">
+        <div class="title">知识图谱官方在线版 <span class="tag">备用入口</span></div>
+        <div class="desc">本仓库镜像打不开时用这个，数据同源。</div>
+      </div>
+    </a>
+    <a class="card" href="https://github.com/L-M-Sherlock/AnkigaokaoTutorial" target="_blank" rel="noopener">
+      <div class="ico">🃏</div>
+      <div class="body">
+        <div class="title">Anki 高考使用手册 <span class="tag">教程</span></div>
+        <div class="desc">怎么把英语单词、古诗文、生物化学考点拆成卡片，配合 Anki 每天复习。</div>
+      </div>
+    </a>
+    <a class="card" href="https://github.com/Ayvytr/KnowledgeHierarchy" target="_blank" rel="noopener">
+      <div class="ico">📓</div>
+      <div class="body">
+        <div class="title">高中理科知识体系 <span class="tag">笔记</span></div>
+        <div class="desc">数理化核心公式与典型例题，Markdown + LaTeX 整理。</div>
+      </div>
+    </a>
+    <a class="card" href="https://oi-wiki.org/" target="_blank" rel="noopener">
+      <div class="ico">💻</div>
+      <div class="body">
+        <div class="title">OI Wiki <span class="tag">拓展</span></div>
+        <div class="desc">学有余力、想接触信息学竞赛时的免费算法知识库。</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="hint">
+    <strong>添加到主屏幕：</strong>iOS 用 Safari 打开本页 → 分享 → “添加到主屏幕”；
+    Android 用 Chrome → 右上角菜单 → “添加到主屏幕”。之后像 App 一样点开就用。
+  </div>
+
+  <footer>
+    知识图谱镜像来自 <a href="https://github.com/xiaoyang111222/cn-math-taxonomy" target="_blank" rel="noopener">cn-math-taxonomy</a>（CC BY-NC 4.0，个人学习/教学使用，非商用）；其余为官方站点链接。
+    <br>MathBank 题库运行在家庭电脑上，数据不出内网。
+  </footer>
+</div>
+</body>
+</html>
