@@ -35,6 +35,21 @@ rsync -a --delete \
 git add -A && git commit -m "sync taxonomy $(date +%F)" && git push
 ```
 
+## 维护：MathBank 地址自动同步
+
+入口页里的 MathBank 链接是家庭局域网地址，会随路由器重新分配而变。本机用
+systemd 用户定时器 `mathbank-url-sync.timer`（每 15 分钟）运行
+`/mnt/data/ai家教/高中教学/scripts/sync-mathbank-url.sh`：
+读取 `enp4s0` 的 IPv4，与 `index.html` 中的地址比对，变了就改链接并自动 `git push`。
+
+```bash
+systemctl --user status mathbank-url-sync.timer     # 定时器状态
+systemctl --user start  mathbank-url-sync.service   # 立即同步一次
+tail -f /mnt/data/ai家教/高中教学/scripts/sync-mathbank-url.log
+```
+
+> MathBank 只在家庭内网可用，**电脑关机时打不开**；本仓库其余页面为静态托管，不受影响。
+
 ## 许可与署名
 
 - `taxonomy/` 内容版权归 [xiaoyang111222/cn-math-taxonomy](https://github.com/xiaoyang111222/cn-math-taxonomy) 作者所有，
